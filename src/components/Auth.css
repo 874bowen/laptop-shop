@@ -1,0 +1,18 @@
+#form {
+    width: 50%;
+    margin: auto;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+    padding: 10px;
+
+}
+.content {
+    margin-top: 10%;
+}
+p, .input{
+    margin: 3px;
+    padding: 3px;
+    font-size: xx-large;
+}
