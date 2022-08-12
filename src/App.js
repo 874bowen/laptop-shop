@@ -6,9 +6,15 @@ import Main from './components/MainComponent';
 import Auth from './components/AuthComponent';
 
 function App() {
+  //grab state using useselector hook
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  console.log(isLoggedIn);
   return(
     // <Main />
-    <Auth />
+    <div>
+      { !isLoggedIn && <Auth/>}
+      { isLoggedIn && <Main />}
+    </div>
   );
 }
 export default App;
