@@ -13,7 +13,7 @@ const Auth = () => {
     return (
         <div className="container">
             <div className="content">
-                <h1 className="mx-auto text-center">Login</h1> {" "}
+                <h1 className="mx-auto text-center">Login 😅</h1> {" "}
                 <Form id="form" onSubmit={handleSubmit}>
                     <Label htmlFor="id">Id</Label>
                     <Input className="input" type="text" name="id" id="id" />
