@@ -8,12 +8,12 @@ const CartItem = ({id, name, quantity, total, price}) => {
         dispatch(cartActions.addToCart({id, name, price}));
     }
     const removeHandler = () => {
-        dispatch(cartActions.removeItem({id}));
+        dispatch(cartActions.removeItem(id));
     };
     return(
         <div className="container">
             <div className="row">
-                <div className="col-4"><p><h2>{name}</h2></p></div>
+                <div className="col-4"><h2>{name}</h2></div>
                 <div className="col-2"><p>${price}</p></div>
                 <div className="col-2"><p>x{quantity}</p></div>
                 <div className="col-2"><article>Total ${total}</article></div>
