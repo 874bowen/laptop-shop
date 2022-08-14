@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Button } from 'reactstrap';
-import {actions} from './store/index';
+import React  from 'react';
+import { useSelector } from 'react-redux';
 import Main from './components/MainComponent';
 import Auth from './components/AuthComponent';
 
