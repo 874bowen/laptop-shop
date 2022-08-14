@@ -18,7 +18,6 @@ const CartItems = () => {
                             total={item.totalPrice} />
                     </li>
                 ))}
-                
             </ul>
         </div>
     );
