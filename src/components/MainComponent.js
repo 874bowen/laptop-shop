@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import { useSelector } from 'react-redux';
 import CartItems from './CartItemsComponent';
 
 
 import Header from "./HeaderComponent";
 import Products from './ProductsComponent';
 
-class Main extends Component {
-    render(){
+const Main = () => {
+    const showCart = useSelector(state => state.cart.showCart);
         return(
-            <div className='bdy'><Header /><Products /> <CartItems /></div>
+            <div className='bdy'>
+                <Header />
+                <Products />
+                { showCart && <CartItems /> }
+            </div>
         );
-    };
-}
+};
 
 export default Main;
