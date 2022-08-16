@@ -20,7 +20,7 @@ function App() {
         body: JSON.stringify(cart),
       } 
     );
-    const data = await res.json();
+    const data = await res.json(); // data successfull
     };
     sendRequest();
   }, [cart]);
