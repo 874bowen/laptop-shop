@@ -14,10 +14,15 @@ function App() {
   // will have a callback function with an array of dependencies
 
   useEffect(() => {
-    fetch('https://redux-shopping-7c9ee-default-rtdb.firebaseio.com/cartitems.json', {
-      method: 'PUT',
-      body: JSON.stringify(cart)
-    })
+    const sendRequest = async () => {
+      const res = await fetch('https://redux-shopping-7c9ee-default-rtdb.firebaseio.com/cartitems.json', {
+        method: 'PUT',
+        body: JSON.stringify(cart),
+      } 
+    );
+    const data = await res.json();
+    };
+    sendRequest();
   }, [cart]);
   return(
     <div>
