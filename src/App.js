@@ -4,6 +4,7 @@ import Main from './components/MainComponent';
 import Auth from './components/AuthComponent';
 import Notification from './components/NotificationComponent';
 import { uiActions } from './store/UiSlice';
+import { sendCartData } from './store/CartSlice';
 
 let isFirstRender = true; 
 function App() {
@@ -23,35 +24,10 @@ function App() {
       isFirstRender = false;
       return;
     }
-    const sendRequest = async () => {
-      // send state as Sending request
-      dispatch(uiActions.showNotification({
-        open: true,
-        message: 'Sending Request ... ',
-        type: 'warning'
-      }));
-      const res = await fetch('https://redux-shopping-7c9ee-default-rtdb.firebaseio.com/cartitems.json', {
-        method: 'PUT',
-        body: JSON.stringify(cart),
-      }
-    );
-    const data = await res.json(); // successfull
-    // send state as Request is successful
-    dispatch(uiActions.showNotification({
-      open: true,
-      message: 'Sent Request to Database Successfully',
-      type: 'success'
-    }));
-    };
-    sendRequest().catch(err => {
-      // send state as Error
-      dispatch(uiActions.showNotification({
-        open: true,
-        message: 'Sending Request Failed',
-        type: 'error'
-      }));
-    });
-  }, [cart]);
+    // thunk data
+    dispatch(sendCartData(cart));
+    
+  }, [cart,dispatch]);
   return(
     <div>
       { notification && <Notification type={notification.type} message={notification.message} /> }
