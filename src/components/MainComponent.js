@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from 'reactstrap';
 import CartItems from './CartItemsComponent';
+import FeedbackForm from './formComponent';
 
 
 import Header from "./HeaderComponent";
@@ -23,6 +24,7 @@ const Main = () => {
                     <h3>Total: ${total}</h3>
                     <Button>Place Order</Button>
                 </div>
+                <FeedbackForm />
             </div>
         );
 };
